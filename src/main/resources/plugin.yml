@@ -1,0 +1,8 @@
+name: Effecter
+version: '${project.version}'
+main: n8.effecter.Effecter
+api-version: 1.19
+prefix: Effecter
+authors: [ n8 ]
+description: Effecter gives random negative or positive effect to players which change overtime based on event.
+website: github.com/nathaniemorgan
