@@ -3,24 +3,24 @@ positive:
   effects: 2
   0:
     name: SPEED
-    duration: 24000
+    duration: 30000
     amplifier: 0
   1:
-    name: SPEED
-    duration: 20000
+    name: INCREASE_DAMAGE
+    duration: 25000
     amplifier: 0
 negative:
   #Number of negative effects that will follow starting with effect 0,1,etc.
   effects: 3
   0:
-    name: SPEED
-    duration: 16000
+    name: POISON
+    duration: 20000
     amplifier: 0
   1:
-    name: SPEED
-    duration: 12000
+    name: SLOW
+    duration: 15000
     amplifier: 0
   2:
     name: SPEED
-    duration: 8000
-    amplifier: 0
+    duration: 40000
+    amplifier: 3

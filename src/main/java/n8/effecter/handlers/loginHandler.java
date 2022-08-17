@@ -25,40 +25,41 @@ public class loginHandler implements Listener {
         int numPos = config.getInt("positive.effects");
         int numNeg = config.getInt("negative.effects");
 
-        //Randomly select either positive(0) or negative(1)
+        //Randomly select either positive(0) or negative(1) and store it
         int effectType = getRandomInt(2);
-        //Get potion effect information from configuration
+
+        //Create variables to store necessary data to retrieve from config.yml
         int index;
         PotionEffectType name;
         int duration;
         int amplifier;
+
+        //Import effect from config
         if (effectType == 0) {
             //Positive effect at random index
             index = getRandomInt(numPos);
             if (config.getString("positive." + index + ".name") == null) {
+                Bukkit.broadcastMessage("The config value was null positive");
                 return;
             }
             name = PotionEffectType.getByName(Objects.requireNonNull(config.getString("positive." + index + ".name")));
             duration = config.getInt("positive." + index + ".duration");
             amplifier = config.getInt("positive." + index + ".amplifier");
-            Bukkit.broadcastMessage("" + duration);
-        }
-        else {
+        } else {
             //Negative effect at random index
             index = getRandomInt(numNeg);
-            if (config.getString("positive." + index + ".name") == null) {
+            if (config.getString("negative." + index + ".name") == null) {
                 return;
             }
             name = PotionEffectType.getByName(Objects.requireNonNull(config.getString("negative." + index + ".name")));
             duration = config.getInt("negative." + index + ".duration");
             amplifier = config.getInt("negative." + index + ".amplifier");
-            Bukkit.broadcastMessage("" + duration);
         }
+
+        //Construct the effect and assign it to the player
         assert name != null;
         PotionEffect randomEffect = new PotionEffect(name, duration, amplifier);
-
         Player p = event.getPlayer();
-        Bukkit.broadcastMessage(p.toString());
         p.addPotionEffect(randomEffect);
     }
 
