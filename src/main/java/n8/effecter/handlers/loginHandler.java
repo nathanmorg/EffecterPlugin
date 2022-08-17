@@ -1,5 +1,6 @@
 package n8.effecter.handlers;
 
+import java.util.Random;
 import n8.effecter.Effecter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -7,16 +8,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 
-import java.util.Random;
-
 public class loginHandler implements Listener {
     public loginHandler(Effecter plugin) { Bukkit.getPluginManager().registerEvents(this, plugin); }
 
     //Import list of possible effects
     //Temporary list of string arrays
     String[] effectType = {"Negative", "Positive"};
-    String[] posEffects = {"Strength", "Speed", "Regen", "Fire Res"};
     String[] negEffects = {"Damage", "Poison", "Wither", "Blindness"};
+    String[] posEffects = {"Strength", "Speed", "Regen", "Fire Res"};
 
     @EventHandler
     private void onPlayerLogin (PlayerLoginEvent event) {
@@ -37,13 +36,13 @@ public class loginHandler implements Listener {
 
     //Randomly decide between positive or negative
     private static String getRandomEffectType(String[] array) {
-        int rnd = new Random().nextInt(array.length);
-        return array[rnd];
+        int n = new Random().nextInt(array.length);
+        return array[n];
     }
 
     //Get random element of effects arrays
     private static String getRandomEffect(String[] array) {
-        int rnd = new Random().nextInt(array.length);
-        return array[rnd];
+        int n = new Random().nextInt(array.length);
+        return array[n];
     }
 }
