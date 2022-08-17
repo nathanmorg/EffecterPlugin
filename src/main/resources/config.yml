@@ -1,0 +1,26 @@
+positive:
+  #Number of positive effects that will follow starting with effect 0,1,etc.
+  effects: 2
+  0:
+    name: SPEED
+    duration: 24000
+    amplifier: 0
+  1:
+    name: SPEED
+    duration: 20000
+    amplifier: 0
+negative:
+  #Number of negative effects that will follow starting with effect 0,1,etc.
+  effects: 3
+  0:
+    name: SPEED
+    duration: 16000
+    amplifier: 0
+  1:
+    name: SPEED
+    duration: 12000
+    amplifier: 0
+  2:
+    name: SPEED
+    duration: 8000
+    amplifier: 0

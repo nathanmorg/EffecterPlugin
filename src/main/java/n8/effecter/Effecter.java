@@ -8,8 +8,8 @@ public final class Effecter extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        saveDefaultConfig();
         new loginHandler(this);
-
     }
 
     @Override
