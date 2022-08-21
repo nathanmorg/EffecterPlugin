@@ -6,3 +6,10 @@ prefix: Effecter
 authors: [ n8 ]
 description: Effecter gives random negative or positive effect to players which change overtime based on event.
 website: github.com/nathaniemorgan
+commands:
+  createeffect:
+    description: Creates a new effect for players logging in.
+    usage: /createeffect
+    aliases: /effectcreate
+    permission: create
+    permission-message: You do not have permission to execute this command.
