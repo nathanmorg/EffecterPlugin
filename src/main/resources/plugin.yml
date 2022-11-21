@@ -5,7 +5,7 @@ api-version: 1.19
 prefix: Effecter
 authors: [ n8 ]
 description: Effecter gives random negative or positive effect to players which change overtime based on event.
-website: github.com/nathaniemorgan
+website: github.com/nathanmorg
 commands:
   createeffect:
     description: Creates a new effect for players logging in.
