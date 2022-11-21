@@ -1,4 +1,3 @@
-//Feature is no longer being implemented
 package n8.effecter.handlers;
 
 import n8.effecter.Effecter;
@@ -18,6 +17,8 @@ public class deathHandler implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
         Player deadPlayer = event.getEntity().getPlayer();
+        //get effects of killPlayer
         Player killPlayer = event.getEntity().getKiller();
+        //add effect of dead player to kill player
     }
 }
