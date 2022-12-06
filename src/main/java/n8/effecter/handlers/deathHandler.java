@@ -7,6 +7,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.potion.PotionEffect;
+
+import java.util.Collection;
 
 public class deathHandler implements Listener {
     FileConfiguration config;
@@ -16,9 +19,14 @@ public class deathHandler implements Listener {
     }
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
+        //Store the dead player and it's killer
         Player deadPlayer = event.getEntity().getPlayer();
-        //get effects of killPlayer
         Player killPlayer = event.getEntity().getKiller();
-        //add effect of dead player to kill player
+
+        //Store the dead player's effects
+        Collection<PotionEffect> deadEffects = deadPlayer.getActivePotionEffects();
+
+        //Add the dead player's effects to the killer's effects
+        killPlayer.addPotionEffects(deadEffects);
     }
 }
