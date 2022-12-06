@@ -28,5 +28,8 @@ public class deathHandler implements Listener {
 
         //Add the dead player's effects to the killer's effects
         killPlayer.addPotionEffects(deadEffects);
+
+        //Log confirmation that effects were added in console
+        Bukkit.broadcastMessage("The dead's effects were passed onto the killer!");
     }
 }
