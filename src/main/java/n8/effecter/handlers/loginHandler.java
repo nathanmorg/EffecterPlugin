@@ -22,8 +22,8 @@ public class loginHandler implements Listener {
     }
     @EventHandler
     public void onPlayerLogin(PlayerJoinEvent event) {
-        int numPos = config.getInt("positive.effects");
-        int numNeg = config.getInt("negative.effects");
+        int numPos = config.getConfigurationSection("positive").getKeys(false).size();
+        int numNeg = config.getConfigurationSection("negative").getKeys(false).size();
 
         //Randomly select either positive(0) or negative(1) and store it
         int effectType = getRandomInt(2);
