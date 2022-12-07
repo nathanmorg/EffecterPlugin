@@ -1,6 +1,5 @@
 positive:
   #Number of positive effects that will follow starting with effect 0,1,etc.
-  effects: 2
   0:
     name: SPEED
     duration: 30000
@@ -11,7 +10,6 @@ positive:
     amplifier: 0
 negative:
   #Number of negative effects that will follow starting with effect 0,1,etc.
-  effects: 3
   0:
     name: POISON
     duration: 20000
